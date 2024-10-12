@@ -3,5 +3,5 @@ repos:
     rev: v1.5.7  # Use the latest stable version
     hooks:
       - id: autopep8
-        args: ["--max-line-length=79"] 
+        args: ["--in-place", "--max-line-length=79"]
         additional_dependencies: []
