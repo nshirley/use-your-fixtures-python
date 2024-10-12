@@ -1,4 +1,3 @@
-# tests/test_users.py
 import requests
 from api.routes import ROUTES
 

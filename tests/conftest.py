@@ -13,3 +13,8 @@ def authorized_session(auth_token):
     session = requests.Session()
     session.headers.update({'Authorization': f'Bearer {auth_token}'})
     return session
+
+@pytest.fixture
+def unauthorized_session():
+    print('Making an unauthorized session...')
+    return requests.Session()
