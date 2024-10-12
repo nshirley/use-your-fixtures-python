@@ -1,0 +1,7 @@
+repos:
+  - repo: https://github.com/pre-commit/mirrors-autopep8
+    rev: v1.5.7  # Use the latest stable version
+    hooks:
+      - id: autopep8
+        args: ["--max-line-length=79"]
+        additional_dependencies: []
