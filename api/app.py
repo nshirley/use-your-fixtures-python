@@ -11,7 +11,7 @@ USERS = [
 ]
 
 # error handlers
-@app.errorhandler(401)
+@app.errorhandler(401) 
 def unauthorized(error):
     return jsonify({"error": "unauthorized"}), 401
 
