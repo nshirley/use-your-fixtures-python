@@ -28,11 +28,9 @@ def test_get_users_returns_all_users_without_fixture():
     assert len(users) > 1
 
 def test_get_users_returns_user_by_id_without_fixture():
-    # get the auth token
     auth_response = requests.post(f'{BASE_URL}{ROUTES.AUTH}', json={'username': 'user', 'password': 'p@ssw0rd'})
     assert auth_response.status_code == 200
     auth_token = auth_response.json().get('access_token')
-    # use auth token to get user by id
     response = requests.get(f'{BASE_URL}{ROUTES.USERS}?id=1', headers={'Authorization': f'Bearer {auth_token}'})
     assert response.status_code == 200
     user = response.json()

@@ -22,11 +22,10 @@ def bad_request(error):
 # before hook for authorization
 @app.before_request
 def check_authorization():
-    # Skip the health endpoint from requiring authorization
     if request.path not in [ ROUTES.AUTH, ROUTES.HEALTH]:
         auth_header = request.headers.get('Authorization')
         if not auth_header or auth_header != 'Bearer super_secret_token':
-            abort(401)  # Unauthorized
+            abort(401)
 
 # Routes
 @app.route(ROUTES.AUTH, methods=['POST'])
